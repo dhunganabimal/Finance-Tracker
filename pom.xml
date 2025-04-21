@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example.bimal</groupId>
+  <artifactId>Finance Tracker</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging> <!-- Correct packaging for web applications -->
+
+  <name>Project_First Maven Webapp</name>
+  <url>http://www.example.com</url> <!-- Optional: Update if you have a project site -->
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Using Java 11, compatible with Tomcat 9 -->
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+
+    <!-- Define versions for plugins and dependencies for easier management -->
+    <junit.version>4.13.2</junit.version>
+    <servlet.api.version>4.0.1</servlet.api.version> <!-- Standard for Tomcat 9 / Java EE 8 -->
+    <jsp.api.version>2.3.3</jsp.api.version>       <!-- Standard for Tomcat 9 / Java EE 8 -->
+    <jstl.version>1.2</jstl.version>
+    <mysql.connector.version>8.2.0</mysql.connector.version>
+    <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+    <maven.war.plugin.version>3.3.2</maven.war.plugin.version>
+  </properties>
+
+  <dependencies>
+    <!-- Servlet API (Provided by Tomcat 9) -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet.api.version}</version>
+      <scope>provided</scope> <!-- Crucial: Tomcat provides this, don't bundle it -->
+    </dependency>
+
+    <!-- JSP API (Provided by Tomcat 9) -->
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>${jsp.api.version}</version>
+      <scope>provided</scope> <!-- Crucial: Tomcat provides this, don't bundle it -->
+    </dependency>
+
+    <!-- JSTL (Standard Tag Library for JSPs - Needed for tags like c:forEach) -->
+    <!-- NOT provided by Tomcat by default, so no 'provided' scope -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl.version}</version>
+    </dependency>
+
+    <!-- MySQL Database Connector -->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>${mysql.connector.version}</version>
+      <!-- Default 'compile' scope is usually fine here -->
+    </dependency>
+
+    <!-- JUnit for Testing -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope> <!-- Only needed for the test phase -->
+    </dependency>
+
+    <!--
+    REMOVED: tomcat-embed-core (Not needed for standard WAR deployment)
+    REMOVED: servlet-api:2.5 (Redundant and outdated)
+    -->
+
+  </dependencies>
+
+  <build>
+    <!-- Sets the final name of the WAR file (e.g., Project_First.war) -->
+    <finalName>${project.artifactId}</finalName>
+
+    <!-- Define plugin configurations directly -->
+    <plugins>
+      <!-- Configures Java compilation -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <!-- Source/Target versions are taken from properties -->
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+
+      <!-- Configures how the WAR file is built -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven.war.plugin.version}</version>
+        <configuration>
+          <!-- Set to false if you use annotations (@WebServlet) and might not have a web.xml -->
+          <!-- Set to true or remove if you always require a valid web.xml -->
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+
+      <!-- Other standard lifecycle plugins (clean, resources, surefire, install, deploy) -->
+      <!-- will use reasonable defaults or versions defined elsewhere (like parent POMs or Maven Super POM) -->
+      <!-- Explicit configuration is only needed if you want to override defaults -->
+
+    </plugins>
+  </build>
+</project>
