@@ -76,7 +76,7 @@ A web-based personal finance management system that helps users track their inco
 ### Installation Steps
 1. Clone the repository
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/dhunganabimal/Finance-Tracker
    ```
 
 2. Configure MySQL Database
@@ -132,4 +132,4 @@ This project is currently in development. Contributions, suggestions, and feedba
 
 
 
-**Note**: This project is under active development. The UI work is not even started yet !!! So, feel free to Contribute
+**Note**: This project is under active development. The UI work is not even started yet !!! So, feel free to Contribute.
