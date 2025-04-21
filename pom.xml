@@ -7,21 +7,21 @@
   <groupId>org.example.bimal</groupId>
   <artifactId>FinanceTracker</artifactId>
   <version>1.0</version>
-  <packaging>war</packaging> <!-- Correct packaging for web applications -->
+  <packaging>war</packaging> 
 
   <name>Project_First Maven Webapp</name>
-  <url>http://www.example.com</url> <!-- Optional: Update if you have a project site -->
+  <url>http://www.example.com</url> 
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- Using Java 11, compatible with Tomcat 9 -->
+    
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
 
-    <!-- Define versions for plugins and dependencies for easier management -->
+  
     <junit.version>4.13.2</junit.version>
-    <servlet.api.version>4.0.1</servlet.api.version> <!-- Standard for Tomcat 9 / Java EE 8 -->
-    <jsp.api.version>2.3.3</jsp.api.version>       <!-- Standard for Tomcat 9 / Java EE 8 -->
+    <servlet.api.version>4.0.1</servlet.api.version> 
+    <jsp.api.version>2.3.3</jsp.api.version>       
     <jstl.version>1.2</jstl.version>
     <mysql.connector.version>8.2.0</mysql.connector.version>
     <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
@@ -29,12 +29,12 @@
   </properties>
 
   <dependencies>
-    <!-- Servlet API (Provided by Tomcat 9) -->
+    
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>${servlet.api.version}</version>
-      <scope>provided</scope> <!-- Crucial: Tomcat provides this, don't bundle it -->
+      <scope>provided</scope> 
     </dependency>
 
     <!-- JSP API (Provided by Tomcat 9) -->
@@ -45,8 +45,7 @@
       <scope>provided</scope> <!-- Crucial: Tomcat provides this, don't bundle it -->
     </dependency>
 
-    <!-- JSTL (Standard Tag Library for JSPs - Needed for tags like c:forEach) -->
-    <!-- NOT provided by Tomcat by default, so no 'provided' scope -->
+   
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
@@ -61,19 +60,7 @@
       <!-- Default 'compile' scope is usually fine here -->
     </dependency>
 
-    <!-- JUnit for Testing -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope> <!-- Only needed for the test phase -->
-    </dependency>
-
-    <!--
-    REMOVED: tomcat-embed-core (Not needed for standard WAR deployment)
-    REMOVED: servlet-api:2.5 (Redundant and outdated)
-    -->
-
+   
   </dependencies>
 
   <build>
@@ -100,15 +87,12 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>${maven.war.plugin.version}</version>
         <configuration>
-          <!-- Set to false if you use annotations (@WebServlet) and might not have a web.xml -->
-          <!-- Set to true or remove if you always require a valid web.xml -->
+         
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
 
-      <!-- Other standard lifecycle plugins (clean, resources, surefire, install, deploy) -->
-      <!-- will use reasonable defaults or versions defined elsewhere (like parent POMs or Maven Super POM) -->
-      <!-- Explicit configuration is only needed if you want to override defaults -->
+      
 
     </plugins>
   </build>
