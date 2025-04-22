@@ -9,10 +9,10 @@
 
 <h2>Login</h2>
 <form action="runservlet2" method="post">
-    Email:
+    Enter Email:
     <input type="text" name="email" required>
     <br>
-    Password:
+   Enter  Password:
     <input type="password" name="pass" required>
     <br>
     <input type="submit" value="Login">
