@@ -21,12 +21,22 @@ public class ExpReportServlet extends HttpServlet {
             stmt.setString(1,name);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                String amount=rs.getString(2);
+                String amount=rs.getString(3);
                 String dateTime=rs.getString(1);
-                String incomeSource= rs.getString(3);
-                out.println(amount);
-                out.println(dateTime);
-                out.println(incomeSource);
+                String incomeSource= rs.getString(2);
+                out.println("<html>");
+                out.println("<body>");
+                out.print("<h4>The amount used is </h4>"+amount);
+                out.println("<br>");
+                out.println("<br>");
+                out.print("<h4>The Expenditure source is  </h4>"+incomeSource);
+                out.println("<br>");
+                out.println("<br>");
+                out.print("<h4>The data and time of Expense is  </h4>"+dateTime);
+                out.println("<br>");
+                out.println("<br>");
+                out.println("</body>");
+                out.println("</html>");
             } else {
                 req.setAttribute("status", "failed");
                 req.getRequestDispatcher("report.jsp").forward(req, res);
