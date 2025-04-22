@@ -85,6 +85,7 @@ A web-based personal finance management system that helps users track their inco
    USE login_db;
    
    CREATE TABLE loginData (
+   id INT NOT NULL,
        name VARCHAR(255) NOT NULL,
        email VARCHAR(255) NOT NULL UNIQUE,
        pass VARCHAR(255) NOT NULL,

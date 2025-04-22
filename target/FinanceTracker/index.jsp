@@ -12,15 +12,16 @@
     %>
         <h2>Welcome, <%= name %>!</h2>
         <p>You have successfully logged in.</p>
-    <p>Check and Update Income
+    <p>Add Income Details
         <br><br>
         <a href="income.jsp"><button>Income</button></a></p>
-    <p>Check and Update Expenditure
+    <p>Add Expenditure Details
         <br><br>
         <a href="exp.jsp"><button>Expenditure</button></a></p>
-    <p>Still in progress!!!
+
+    <p> Check Report
         <br><br>
-        <a ><button>Remarks</button></a></p>
+        <a  href="report.jsp"><button>Check Report</button></a></p>
 
 
         <a href="logout">Logout</a>

@@ -17,12 +17,12 @@ request.getAttribute("status");
 
 </form>
 <br>
-<form action="runservlet6">
+<form action="runservlet6" method="post">
     Check Expenditure Report:
     <input type="submit" value="Expenditure Report">
 </form>
 <br>
-<form action="runservlet7">
+<form action="runservlet7" method="post">
     Check Saving Report:
     <input type="submit" value="Check Profit">
 </form>

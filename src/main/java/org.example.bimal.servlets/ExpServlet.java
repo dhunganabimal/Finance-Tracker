@@ -13,6 +13,7 @@ public class ExpServlet extends HttpServlet{
         String date = req.getParameter("edate");
         String time = req.getParameter("etime");
         String dateTime = date + " " + time;
+        String id=req.getParameter("eid");
         String incomeSource=req.getParameter("esource");
         String amount=req.getParameter("eamount");
 //        PrintWriter out=res.getWriter();
@@ -29,11 +30,12 @@ public class ExpServlet extends HttpServlet{
             String user ="root1";
             String pass="rootpass";
             conn = DriverManager.getConnection(url,user,pass);
-            String query="Insert into expData (edate,esource,eamount) values(?,?,?)";
+            String query="Insert into expData (edate,esource,eamount,register_id) values(?,?,?,?)";
             PreparedStatement stmt=conn.prepareStatement(query);
             stmt.setString(1,dateTime);
             stmt.setString(2,incomeSource);
             stmt.setString(3,amount);
+            stmt.setString(4,id);
             int rowCount=stmt.executeUpdate();
             dispatcher=req.getRequestDispatcher("exp.jsp");
             if(rowCount>0){

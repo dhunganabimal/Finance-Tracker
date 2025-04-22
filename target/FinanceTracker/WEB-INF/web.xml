@@ -43,5 +43,31 @@
     <servlet-name>IncomeServlet</servlet-name>
     <url-pattern>/runservlet3</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>IncomeReportServlet</servlet-name>
+    <servlet-class>org.example.bimal.servlets.IncomeReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IncomeReportServlet</servlet-name>
+    <url-pattern>/runservlet5</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ExpReportServlet</servlet-name>
+    <servlet-class>org.example.bimal.servlets.ExpReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExpReportServlet</servlet-name>
+    <url-pattern>/runservlet6</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProfitReportServlet</servlet-name>
+    <servlet-class>org.example.bimal.servlets.ProfitReportServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfitReportServlet</servlet-name>
+    <url-pattern>/runservlet7</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>

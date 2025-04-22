@@ -13,6 +13,9 @@ request.getAttribute("status");
 ">
 <form action="runservlet1" method="post">
     <h2>Registration Page</h2>
+    Enter Id:
+    <input type="text" name="uid">
+    <br><br>
     Enter Name:
     <input type="text" name="name" required>
     <br><br>

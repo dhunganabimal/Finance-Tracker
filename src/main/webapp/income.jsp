@@ -15,6 +15,7 @@ request.getAttribute("status");
 <form action="runservlet3" method="post">
     Enter id :
     <input type="text" name="iid">
+    <br><br>
 Enter Date :
     <input type="date" name="idate">
     <br><br>
@@ -31,6 +32,8 @@ Enter Date :
     <input type="text" id="amt" name="iamount">
     <br><br>
     <input type="submit" value="Submit">
+    <br><br>
+   <p><a href="index.jsp">Home Page</a></p>
 </form>
 <script>
     var status = "${status}";
