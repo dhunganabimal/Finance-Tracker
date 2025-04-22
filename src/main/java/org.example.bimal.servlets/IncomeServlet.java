@@ -13,6 +13,7 @@ public class IncomeServlet extends HttpServlet{
         String date = req.getParameter("idate");
         String time = req.getParameter("itime");
         String dateTime = date + " " + time;
+        String id=req.getParameter("iid");
        String incomeSource=req.getParameter("isource");
        String amount=req.getParameter("iamount");
 //        PrintWriter out=res.getWriter();
@@ -29,11 +30,12 @@ public class IncomeServlet extends HttpServlet{
             String user ="root1";
             String pass="rootpass";
             conn = DriverManager.getConnection(url,user,pass);
-           String query="Insert into incomeData (idate,isource,iamount) values(?,?,?)";
+           String query="Insert into incomeData (idate,isource,iamount,register_id) values(?,?,?,?)";
             PreparedStatement stmt=conn.prepareStatement(query);
             stmt.setString(1,dateTime);
             stmt.setString(2,incomeSource);
             stmt.setString(3,amount);
+            stmt.setString(4,id);
             int rowCount=stmt.executeUpdate();
             dispatcher=req.getRequestDispatcher("income.jsp");
             if(rowCount>0){

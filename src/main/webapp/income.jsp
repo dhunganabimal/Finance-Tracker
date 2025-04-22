@@ -13,6 +13,8 @@ request.getAttribute("status");
 %>
 ">
 <form action="runservlet3" method="post">
+    Enter id :
+    <input type="text" name="iid">
 Enter Date :
     <input type="date" name="idate">
     <br><br>

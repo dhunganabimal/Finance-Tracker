@@ -12,7 +12,7 @@
     Enter Email:
     <input type="text" name="email" required>
     <br>
-   Enter  Password:
+   Enter Password:
     <input type="password" name="pass" required>
     <br>
     <input type="submit" value="Login">
