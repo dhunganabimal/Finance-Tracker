@@ -3,6 +3,18 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>dbUrl</param-name>
+    <param-value>jdbc:mysql://localhost/login_db?useSSL=false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbUser</param-name>
+    <param-value>root1</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>rootpass</param-value>
+  </context-param>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>org.example.bimal.servlets.LoginServlet</servlet-class>

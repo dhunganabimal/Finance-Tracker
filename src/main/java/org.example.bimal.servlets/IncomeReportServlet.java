@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 public class IncomeReportServlet extends HttpServlet {
-    private static final String DB_URL = "jdbc:mysql://localhost/login_db?useSSL=false";
-    private static final String DB_USER = "root1";
-    private static final String DB_PASSWORD = "rootpass";
+    private  final String DB_URL = getServletContext().getInitParameter("dbUrl");
+    private  final String DB_USER = getServletContext().getInitParameter("dbUser");
+    private  final String DB_PASSWORD = getServletContext().getInitParameter("dbPassword");
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     HttpSession session = req.getSession();
     String name = (String) session.getAttribute("name");
@@ -36,7 +36,7 @@ public class IncomeReportServlet extends HttpServlet {
             String dateTime = rs.getString(1);
             String incomeSource = rs.getString(2);
             out.println("<div class='expense-entry'>");
-            out.print("<h4>The amount used is </h4>" + amount);
+            out.print("<h4>The amount gained is </h4>" + amount);
             out.println("<br><br>");
             out.print("<h4>The Income source is </h4>" + incomeSource);
             out.println("<br><br>");

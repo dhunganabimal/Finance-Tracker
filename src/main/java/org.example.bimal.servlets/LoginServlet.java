@@ -6,9 +6,9 @@ import java.sql.*;
 
 public class LoginServlet extends HttpServlet {
 
-    private static final String DB_URL = "jdbc:mysql://localhost/login_db?useSSL=false";
-    private static final String DB_USER = "root1";
-    private static final String DB_PASSWORD = "rootpass";
+    private  final String DB_URL = getServletContext().getInitParameter("dbUrl");
+    private  final String DB_USER = getServletContext().getInitParameter("dbUser");
+    private  final String DB_PASSWORD = getServletContext().getInitParameter("dbPassword");
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String email = req.getParameter("email").trim();
